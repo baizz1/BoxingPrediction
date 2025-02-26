@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh - CN">
+
+<head>
+    <meta charset="UTF - 8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影预测网站</title>
+    <!-- 正确引用 CSS 文件 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>电影预测平台</h1>
+    </header>
+    <main>
+        <section class="movie - list">
+            <h2>热门电影预测</h2>
+            <div class="movie - item" data - movie - id="1">
+                <!-- 正确引用图片文件 -->
+                <img src="{{ url_for('static', filename='movie1.jpg') }}" alt="电影1">
+                <h3>电影名称1</h3>
+                <p>预测评分：<span class="predicted - rating">8.5</span></p>
+                <button onclick="showMovieDetails(1)">查看详情</button>
+            </div>
+            <div class="movie - item" data - movie - id="2">
+                <img src="{{ url_for('static', filename='movie2.jpg') }}" alt="电影2">
+                <h3>电影名称2</h3>
+                <p>预测评分：<span class="predicted - rating">7.8</span></p>
+                <button onclick="showMovieDetails(2)">查看详情</button>
+            </div>
+            <div class="movie - item" data - movie - id="3">
+                <img src="{{ url_for('static', filename='movie3.jpg') }}" alt="电影3">
+                <h3>电影名称3</h3>
+                <p>预测评分：<span class="predicted - rating">8.2</span></p>
+                <button onclick="showMovieDetails(3)">查看详情</button>
+            </div>
+        </section>
+        <section class="movie - details" id="movie - details - section">
+            <span class="close - button" onclick="closeMovieDetails()">×</span>
+            <img id="movie - details - poster" src="" alt="电影海报">
+            <h2 id="movie - details - title"></h2>
+            <p id="movie - details - plot"></p>
+            <p>预测评分：<span id="movie - details - predicted - rating"></span></p>
+        </section>
+    </main>
+    <!-- 正确引用 JavaScript 文件 -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
